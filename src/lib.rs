@@ -1,6 +1,7 @@
 use std::ffi::c_void;
 
 use engage::{
+    proc::ProcInst,
     script::EventScript,
     menu::config::ConfigBasicMenuItem,
 };
@@ -31,6 +32,8 @@ pub enum SystemEvent {
     MsbtLoaded,
     LanguageChanged,
     SaveLoaded { slot_id: u32 },
+    // 0.3.0
+    ProcInstJump { proc: &'static ProcInst, label: i32 }
 }
 
 // Event system
